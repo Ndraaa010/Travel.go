@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Travel.go</title>
+</head>
+<body>
+    <header>
+        <h1>Travel.go</h1>
+        <h4>Ayo temukan destinasi anda di Bali</h4>
+    </header>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <p class="paragraf">Travel.go <img src="taxi logo.png" alt="logo travelgo"></p>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#destinasii">Destinasi</a></li>
+                <li><a href="#paket">Paket Wisata</a></li>
+                <li><a href="#contactt">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="destinasi" id="destinasii">
+            <h2>Destinasi Terkini</h2>
+            <div class="destinasi-container">
+                <div class="destinasi-item">
+                    <img src="Pura Tanah Lot.jpeg" alt="destinasi-tanahlot">
+                <h3>Tanah Lot Bali</h3>
+                <p>Suasana sinematik dapat Sobat Pesona temui saat berjalan-jalan mengelilingi pura. banyak wisatawan yang berkunjung </p>
+                <button><a href="destinasi1.html" class="button-link">Lihat</a></button>
+
+            </div>
+            <div class="destinasi-item">
+                <img src="uluwatuTemple.jpeg" alt="destinasi-Pura Uluwatu">
+                <h3>Pura Uluwatu Bali</h3>
+                <p>Pura Uluwatu bukan hanya tempat sembahyang bagi umat Hindu, tetapi juga menarik wisatawan karena keindahan alamnya</p>
+                <button><a href="destinasi1.html" class="button-link">Lihat</a></button>
+            </div>
+            <div class="destinasi-item">
+                <img src="lovina.jpeg" alt="destinasi-Lovina">
+                <h3>Lovina </h3>
+                <p>Lovina juga menawarkan keindahan bawah laut yang kaya dengan terumbu karang dan berbagai jenis ikan tropis.</p>
+                <button><a href="destinasi1.html" class="button-link">Lihat</a></button>
+            </div>
+            </div>
+        </section>
+        <section class="Paket-Wisata" id="paket">
+            <h2>Paket Wisata</h2>
+            <div class="Paket-Wisata-container">
+                <div class="Paket-Wisata-item">
+                    <img src="kecak.jpg" alt="Paket-Wisata 1">
+                    <H3>Paket 1</H3>
+                    <p>Hanya bisa 1 Tempat Destinasi</p>
+                    <p>Harga IDR 200k - 300k</p>
+                    <button><a href="belipaket.html" class="button-link">Beli Sekarang</a></button>
+                </div>
+                <div class="Paket-Wisata-item">
+                    <img src="wisata 2.jpeg" alt="Paket-Wisata 2">
+                    <H3>Paket 2</H3>
+                    <p>Hanya 2 - 3 Tempat Destinasi</p>
+                    <p>Harga IDR 350k - 500k </p>
+                    <button><a href="belipaket.html" class="button-link">Beli Sekarang</a></button>
+                </div>
+                <div class="Paket-Wisata-item">
+                    <img src="wisata 3.jpg" alt="Paket-Wisata ">
+                    <H3>Paket 3</H3>
+                    <p>Hanya 3 - 5 Tempat Destinasi</p>
+                    <p>Harga IDR 550k - 990k </p>
+                    <button><a href="belipaket.html" class="button-link">Beli Sekarang</a></button>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contactt">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-text">
+                        <p>Alamat :</p>
+                        <p>Jalan Bantas Kauh No 8 Jimbaran, Bali</p>
+                    </div>
+                 </div>
+                 <div class="contact-item">
+                    <div class="contact-text">
+                    <p>Telepon :</p>
+                    <p>+62-851-6360-1608 </p>
+                </div>
+             </div>
+             <div class="contact-item">
+                <div class="contact-text">
+                <p>Email :</p>
+                <p>Travelgo101@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact-form">
+        <h3>Kirim Pesan</h3>
+        <form id="contact-form" onsubmit="validateForm(event)">
+            <div class="form-grup">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-grup">
+                <input type="email" id="email" placeholder="Email Anda" required>
+            </div>
+            <div class="form-grup">
+                <textarea id="message" placeholder="Pesan Anda" rows="4" required></textarea>
+            </div>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+        <div id="notification" style="display: none; padding: 10px; background-color: #4CAF50; color: white; margin-top: 10px;">
+            Pesan anda berhasil dikirim!
+        </div>
+    </div>
+</div>
+ </section>
+</main>
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+
+        if (!name || !email || !message) {
+            alert('Semua field harus diisi!');
+            return false;
+        }
+
+
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.innerText = 'Pesan berhasil dikirim!';
+
+       
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000); 
+
+        
+        document.getElementById('contact-form').reset();
+        return true;
+    }
+</script>
+    <footer>
+        <P>&copy; Bulls IT 2024 Travel.go</P>
+    </footer>
+</body>
+</html>
